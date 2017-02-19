@@ -1,0 +1,26 @@
+{
+  "name": "cs331-labs",
+  "version": "1.0.0",
+  "description": ":cat2: :cat2: :cat2:",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notenot/cs331-labs.git"
+  },
+  "author": "Senchenko Natalia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notenot/cs331-labs/issues"
+  },
+  "homepage": "https://github.com/notenot/cs331-labs#readme"
+}
