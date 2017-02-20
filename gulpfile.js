@@ -19,8 +19,14 @@ gulp.task('clean', function() {
 });
 
 gulp.task('build', ['clean', 'less-to-css'], function() {
+  var build_css = gulp.src('css/*')
+                      .pipe(gulp.dest('public/css'))
+
   var build_fonts = gulp.src('fonts/**/*')
 	                      .pipe(gulp.dest('public/fonts'))
+
+  var build_img = gulp.src('img/*')          // TODO: image processing
+                      .pipe(gulp.dest('public/img'))
 
   // var build_js = gulp.src('js/**/*')
 	//                    .pipe(gulp.dest('public/js'))
