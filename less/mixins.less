@@ -6,8 +6,21 @@
 }
 
 .container(@pt: 0px) {
-  //width: @bg-img-width - ...;
   max-width: 88%;
   margin: 0 auto;
   padding-top: @pt;
+}
+
+.button(@p) {
+  padding: 15px @p;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: @white-color;
+  background-color: @blue-color;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 20px;
+  &:hover, &:focus {
+    background-color: @blue-color - #222;
+  }
 }
