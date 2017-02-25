@@ -23,7 +23,7 @@ gulp.task('clean', function() {
 
 gulp.task('build', ['clean', 'less-to-css'], function() {
   var build_css =
-    gulp.src('css/*')
+    gulp.src('css/*.css')
         .pipe(gulp.dest('public/css'))
 
   var build_fonts =
@@ -53,9 +53,28 @@ gulp.task('browser-sync', function() {
 
 gulp.task('watch', ['browser-sync', 'less-to-css'], function() {
   gulp.watch('less/*.less', ['less-to-css']);
+
   gulp.watch('*.html', function() {
     gulp.src('*.html')
 	      .pipe(gulp.dest('public'));
+    browserSync.reload();
+  })
+
+  gulp.watch('img/*', function() {
+    gulp.src('img/*')
+	      .pipe(gulp.dest('public/img'));
+    browserSync.reload();
+  })
+
+  gulp.watch('fonts/**/*', function() {
+    gulp.src('fonts/**/*')
+	      .pipe(gulp.dest('public/fonts'));
+    browserSync.reload();
+  })
+
+  gulp.watch('css/*.css', function() {
+    gulp.src('css/*.css')
+	      .pipe(gulp.dest('public/css'));
     browserSync.reload();
   })
 })
