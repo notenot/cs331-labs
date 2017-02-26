@@ -31,7 +31,7 @@ gulp.task('build', ['clean', 'less-to-css'], function() {
 	      .pipe(gulp.dest('public/fonts'))
 
   var build_img =
-    gulp.src('img/*')          // TODO: image processing
+    gulp.src('img/**/*')          // TODO: image processing
         .pipe(gulp.dest('public/img'))
 
   // var build_js = gulp.src('js/**/*')
@@ -60,8 +60,8 @@ gulp.task('watch', ['browser-sync', 'less-to-css'], function() {
     browserSync.reload();
   })
 
-  gulp.watch('img/*', function() {
-    gulp.src('img/*')
+  gulp.watch('img/**/*', function() {
+    gulp.src('img/**/*')
 	      .pipe(gulp.dest('public/img'));
     browserSync.reload();
   })
