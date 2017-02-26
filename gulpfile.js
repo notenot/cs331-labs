@@ -2,14 +2,15 @@ var gulp        = require('gulp'),
     less        = require('gulp-less'),
     concat      = require('gulp-concat'),
     del         = require('del'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync'),
+	  autoprefixer = require('gulp-autoprefixer');;
 
 gulp.task('less-to-css', function() {
   return gulp.src('less/*.less')
              .pipe(concat('build.less'))
              .pipe(less()) // convert to css using gulp-less
-             // .pipe(rename('build.css'))
-             .pipe(gulp.dest('public/css'))
+             .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) 
+		         .pipe(gulp.dest('public/css'))
              .pipe(browserSync.reload({stream: true}))
 });
 
