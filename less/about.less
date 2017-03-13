@@ -13,6 +13,7 @@
   flex-direction: row;
   &__img {
     align-self: flex-end;
+    width: 100%;
   }
 }
 
@@ -43,5 +44,19 @@
   &__btn {
     .blue-button(30px);
     margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about-content {
+    flex-wrap: wrap;
+  }
+  .about-content-text {
+    align-items: center;
+    text-align: center;
+    &__title::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

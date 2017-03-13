@@ -21,6 +21,7 @@
   margin: 20px 0;
   background-color: @white-color;
   &__img {
+    width: 100%;
     &:hover + .portfolio-content-item__btn {
       visibility: visible;
     }
@@ -50,6 +51,7 @@
   align-items: center;
   justify-content: space-around;
   height: 60px;
+  width: 100%;
   &__title {
     text-transform: uppercase;
     color: @dark-gray-color;
@@ -60,5 +62,15 @@
     color: @gray-color-text;
     font-size: 13px;
     font-style: italic;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .portfolio-content {
+    justify-content: center;
+  }
+  .portfolio-content-item {
+    margin-right: 1%;
+    margin-left: 1%;
   }
 }
