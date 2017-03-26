@@ -10,7 +10,8 @@ var gulp         = require('gulp'),
     uglify       = require('gulp-uglifyjs'),
     cssnano      = require('gulp-cssnano'),
     rename       = require('gulp-rename'),
-    spritesmith  = require('gulp.spritesmith');
+    spritesmith  = require('gulp.spritesmith'),
+    eslint       = require('gulp-eslint');
 
 gulp.task('less-to-css', function() {
   return gulp.src('less/**/*')
@@ -34,7 +35,16 @@ gulp.task('img', function() {
 
 gulp.task('scripts', function() {
 	return gulp.src('js/**/*')
-		.pipe(concat('build.js'))
+    // eslint() attaches the lint output to the "eslint" property
+    // of the file object so it can be used by other modules.
+    .pipe(eslint())
+    // eslint.format() outputs the lint results to the console.
+    // Alternatively use eslint.formatEach() (see Docs).
+    .pipe(eslint.format())
+    // To have the process exit with an error code (1) on
+    // lint error, return the stream and pipe to failAfterError last.
+    .pipe(eslint.failAfterError())
+    .pipe(concat('build.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('public/js'));
 });
