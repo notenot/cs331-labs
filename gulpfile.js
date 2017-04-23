@@ -11,7 +11,8 @@ var gulp         = require('gulp'),
     cssnano      = require('gulp-cssnano'),
     rename       = require('gulp-rename'),
     spritesmith  = require('gulp.spritesmith'),
-    eslint       = require('gulp-eslint');
+    eslint       = require('gulp-eslint'),
+    rigger       = require('gulp-rigger');
 
 gulp.task('less-to-css', function() {
   return gulp.src('less/**/*')
@@ -30,13 +31,15 @@ gulp.task('img', function() {
 			svgoPlugins: [{removeViewBox: false}],
 			use: [pngquant()]
 		})))
-		.pipe(gulp.dest('public/img'));
+		.pipe(gulp.dest('public/img'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('scripts', function() {
-	return gulp.src('js/**/*')
+	return gulp.src('js/main.js')
     // eslint() attaches the lint output to the "eslint" property
     // of the file object so it can be used by other modules.
+    .pipe(rigger())
     .pipe(eslint())
     // eslint.format() outputs the lint results to the console.
     // Alternatively use eslint.formatEach() (see Docs).
@@ -46,7 +49,8 @@ gulp.task('scripts', function() {
     .pipe(eslint.failAfterError())
     .pipe(concat('build.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('public/js'));
+		.pipe(gulp.dest('public/js'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('css', ['less-to-css'], function() {
@@ -54,7 +58,8 @@ gulp.task('css', ['less-to-css'], function() {
     .pipe(concat('build.css'))
 		.pipe(cssnano())
 		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest('public/css'));
+		.pipe(gulp.dest('public/css'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('sprite', function() {
@@ -78,7 +83,7 @@ gulp.task('clean', function() {
 	return del.sync('public');
 });
 
-gulp.task('build', ['clean', 'img', 'scripts', 'less-to-css'], function() {
+gulp.task('build', ['clean', 'img', 'scripts', 'less-to-css', 'css'], function() {
   var build_fonts =
     gulp.src('fonts/**/*')
 	      .pipe(gulp.dest('public/fonts'))
@@ -97,8 +102,9 @@ gulp.task('browser-sync', function() {
 	});
 });
 
-gulp.task('watch', ['browser-sync', 'img', 'scripts', 'css'], function() {
+gulp.task('watch', ['browser-sync', 'img', 'less-to-css', 'css', 'scripts'], function() {
   gulp.watch('less/**/*', ['less-to-css']);
+  gulp.watch(['css/**/*', 'public/css/build.css'], ['css']);
   gulp.watch('img/**/*', ['img']);
   gulp.watch('js/**/*', ['scripts']);
 
