@@ -38,7 +38,5 @@ closeLink.addEventListener('click', function () {
   headerContent.style.display = 'flex';
 
   body.style.position = 'static';
-  body.style.overflow = 'visible';
+  body.style.overflow = 'auto';
 });
-
-/* eslint-disable eol-last */
