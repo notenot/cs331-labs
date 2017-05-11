@@ -46,11 +46,3 @@ function closeForm() {
 closeBtn.addEventListener('click', function () {
   closeForm();
 });
-
-submitBtn.addEventListener('click', function () {
-  // ...
-  // submit
-  // ...
-
-  closeForm();
-});
