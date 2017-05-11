@@ -21,9 +21,6 @@ btn.addEventListener('click', function () {
       }, 60);
     }
   }, 60);
-
-  body.style.position = 'fixed';
-  body.style.overflow = 'hidden';
 });
 
 function closeForm() {
@@ -48,8 +45,6 @@ function closeForm() {
 
 closeBtn.addEventListener('click', function () {
   closeForm();
-  body.style.position = 'static';
-  body.style.overflow = 'auto';
 });
 
 submitBtn.addEventListener('click', function () {
@@ -58,6 +53,4 @@ submitBtn.addEventListener('click', function () {
   // ...
 
   closeForm();
-  body.style.position = 'static';
-  body.style.overflow = 'auto';
 });
