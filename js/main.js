@@ -3,3 +3,4 @@
 
 //= partials/hamburger.js
 //= partials/slider.js
+//= partials/popup-feedback.js

@@ -234,7 +234,7 @@
             name="subject" placeholder="Subject..." required>
           <textarea class="contacts-content-form__message"
             name="message" placeholder="Message..." rows=8 required></textarea>
-          <a class="contacts-content-form__btn" href="#">SUBMIT</a>
+          <input class="contacts-content-form__btn" type="submit" value="SUBMIT">
         </form>
       </div>
     </section>
@@ -242,6 +242,24 @@
     <footer class="footer">
       <p class="footer__copyright">Copyright © 2014 UIBrush</p>
     </footer>
+
+    <div class="popup-feedback">
+      <form class="popup-feedback-form" method="post" action="#">
+        <span class="popup-feedback-form__close"></span>
+        <div class="popup-feedback-form__userdata">
+          <input class="popup-feedback-form__name" type="text"
+            name="name" placeholder="Name..." required>
+          <input class="popup-feedback-form__email" type="text"
+            name="email" placeholder="E-Mail..." required>
+        </div>
+        <input class="popup-feedback-form__subject" type="text"
+          name="subject" placeholder="Subject..." required>
+        <textarea class="popup-feedback-form__message"
+          name="message" placeholder="Message..." rows=8 required></textarea>
+        <input class="popup-feedback-form__submit-btn" type="submit" value="SUBMIT">
+      </form>
+      <img class="popup-feedback__btn" src="img/feedback.png" alt="">
+    </div>
 
     <script type="text/javascript" src="js/build.js"></script>
   </body>
