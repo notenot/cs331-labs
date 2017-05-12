@@ -88,6 +88,10 @@ gulp.task('build', ['clean', 'img', 'scripts', 'less-to-css', 'css'], function()
     gulp.src('fonts/**/*')
 	      .pipe(gulp.dest('public/fonts'))
 
+  var build_json =
+    gulp.src('json/**/*')
+        .pipe(gulp.dest('public/json'))
+
   var build_html =
     gulp.src('*.html')
 	      .pipe(gulp.dest('public'))
@@ -118,6 +122,12 @@ gulp.task('watch', ['browser-sync', 'img', 'less-to-css', 'css', 'scripts'], fun
     gulp.src('fonts/**/*')
 	      .pipe(gulp.dest('public/fonts'));
     browserSync.reload();
+  })
+  
+  gulp.watch('json/**/*', function() {
+    gulp.src('json/**/*')
+        .pipe(gulp.dest('public/json'));
+      browserSync.reload();
   })
 })
 

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "navbar": {
+      "burgeropened": ["HOME", "ABOUT US", "PORTFOLIO", "SERVICES", "CONTACT US", "CLOSE"],
+      "menu": ["HOME", "ABOUT US", "PORTFOLIO", "SERVICES", "CONTACT US"]
+    },
+    "content": {
+      "title": "THE ULTIMATE COLLECTION OF FREE PSD TEMPLATES!!",
+      "btn": "DOWNLOAD"
+    }
+  },
+  "about": {
+    "header": {
+      "title": "ABOUT US",
+      "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy hibh <br>euismod tincidunt ut laoreet dolore magna."
+    },
+    "content": {
+      "title": "LOREM IPSUM DOLOR SIT AMET ADIPISICING ELIT.",
+      "paragraph": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."],
+      "btn": "GET STARTED"
+    }
+  }
+}

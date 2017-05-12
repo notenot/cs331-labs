@@ -5,3 +5,4 @@
 //= partials/slider.js
 //= partials/popup-feedback.js
 //= partials/form-validation.js
+//= partials/load-text.js
