@@ -123,7 +123,7 @@ gulp.task('watch', ['browser-sync', 'img', 'less-to-css', 'css', 'scripts'], fun
 	      .pipe(gulp.dest('public/fonts'));
     browserSync.reload();
   })
-  
+
   gulp.watch('json/**/*', function() {
     gulp.src('json/**/*')
         .pipe(gulp.dest('public/json'));
